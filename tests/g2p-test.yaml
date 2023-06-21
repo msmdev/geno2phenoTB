@@ -1,0 +1,26 @@
+name: g2p-test
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - bwa=0.7.17
+  - gatk=3.8
+  - imbalanced-learn=0.8.1
+  - joblib=1.1.1
+  - mtbseq=1.0.4
+  - numpy=1.21.5
+  - numpy-base=1.21.5
+  - packaging=21.3
+  - pandas=0.25.3
+  - perl-base=2.23
+  - python=3.7.15
+  - pytest=7.2
+  - pytest-cov=4.0
+  - requests=2.28
+  - samtools=1.6
+  - scikit-learn=0.24.2
+  - scipy=1.7.3
+  - setuptools=65.5.0
+  - tqdm=4.64
+  - importlib_metadata
