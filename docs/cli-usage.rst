@@ -10,8 +10,8 @@ The command-line interface (CLI) offers two modes: a self-test mode and a run mo
 Run Mode
 --------
 
-This mode is used to predict the resistance of Mtb. The primary command is "run",
-which has several options:
+This mode is used to predict atibiotic resistance of Mycobacterium tuberculosis.
+The primary run command has several options:
 
 .. code-block:: console
 
@@ -48,7 +48,7 @@ extracted. This will skip the prediction.
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Path to the input directory where the FASTQ files are located.
 
-As input, a directory with 2 FASTQ files is required.
+As input, a directory with FASTQ files is required.
 The FASTQ files must follow this naming scheme:
 
 .. code-block:: text
@@ -69,13 +69,13 @@ SampleID (i.e., ERR/SRR run accession). The ID should match with the ID of the F
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The drug for which resistance should be predicted. If you want predictions for several drugs,
 use the argument several times, i.e., --d AMK --d DCS --d STR. If the flag is not set,
-prediction of all drugs will be made.
+predictions for all drugs will be performed.
 
 The DrugCode is a 2 / 3 letter code and can be one of:
 
 .. code-block:: text
 
-    AMK, CAP, CFX, DCS, EMB, ETH, FQ, INH, KAN, MFX, OFX, PAS, PZA, RIF, STR
+    AMK, CAP, DCS, EMB, ETH, FQ, INH, KAN, PAS, PZA, RIF, STR
 
 
 Examples
@@ -102,7 +102,7 @@ Skip the MTBseq steps and use the precomputed output:
 Self-test mode
 --------------
 
-To check the integrity of the installation and dependencies, the self-test can be used.
+To check the integrity of the installation and dependencies, a self-test can be executed.
 It does NOT guarantee that everything is okay, but is strong evidence:
 
 .. code-block:: console
@@ -127,8 +127,8 @@ Fast test of the installation. This will not test the preprocessing / MTBSeq ste
 
 -c, \--complete
 ^^^^^^^^^^^^^^^
-Complete test of the installation. This will download ~170 MB from the ENA and start a complete run.
-Depending on your bandwidth / hardware, this may take a few (5-30) minutes.
+Complete test of the installation. This will download ~170 MB from the ENA and start a complete
+run. Depending on your bandwidth / hardware, this may take a few (5-30) minutes.
 
 Examples
 --------

@@ -68,7 +68,7 @@ def parse_args(args):
         dest="complete",
         help="Complete test of installation. "
         "This will download ~ 170mb from the ENA and start a complete run. "
-        "Depending on your bandwith / hardware this may take a few [5-30] minutes.",
+        "Depending on your bandwith / hardware this may take a few (5-30) minutes.",
         action="store_true",
     )
 
@@ -118,10 +118,10 @@ def parse_args(args):
         "--drug",
         dest="drug",
         help=(
-            "The drug for that resistance shall be predicted. "
-            "If you want predictions for several drugs, use the argument several times, "
-            "i.e., --drug AMK --drug DCS --drug STR. "
-            "If the flag is not set, prediction of all drugs will be made."
+            "The drug for which resistance should be predicted. "
+            "If you want predictions for several drugs, use the argument several times,"
+            "i.e., -d AMK -d DCS -d STR. "
+            "If the flag is not set, predictions for all drugs will be performed."
         ),
         choices=get_drugs(),
         action="append",

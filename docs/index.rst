@@ -1,23 +1,21 @@
-============
-geno2phenoTB
-============
+.. include:: ../README.rst
+    :end-line: 79
 
-This is the documentation of **geno2phenoTB**.
-
-Contents
-========
+.. include:: _key_contributors.rst
 
 .. toctree::
    :maxdepth: 2
+   :hidden:
 
    Overview <readme>
    Installation <installation>
    CLI-Usage <cli-usage>
    Python Module Reference <api/modules>
-   Contributions & Help <contributing>
-   License <license>
+   Contributing & Help <contributing>
+   Acknowledgments <acknowledgments>
    Authors <authors>
-   Changelog <changelog>
+   Release Notes <changelog>
+   License <license>
    References <references>
 
 

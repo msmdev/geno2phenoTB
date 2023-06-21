@@ -1,8 +1,12 @@
-=========
-Changelog
-=========
+=============
+Release Notes
+=============
 
-Version 0.1
-===========
 
-- initial release
+Version 1.0
+-----------
+
+1.0.0 2023-06-21
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Initial release.
