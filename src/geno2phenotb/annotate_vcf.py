@@ -23,7 +23,8 @@ def annotate_vcf(in_path: str) -> None:
         Path to the VCF file to annotate/complete.
     Returns
     -------
-        None. Writes output to new file in the same directory.
+    None
+        Writes output to new file in the same directory.
     """
     _logger.debug(f"Annotating VCF: {in_path}")
 
@@ -48,8 +49,8 @@ def annotate_vcf(in_path: str) -> None:
         allel_type: str = vcf.at[i, "Type"].strip()
         if not bool(re.fullmatch(r"^Ins|Del|SNP$", allel_type)):
             warnings.warn(
-                f"""ref_allele is not in [Ins,Del,SNP],
-but {allel_type} at position {genome_pos} for {in_path}."""
+                "ref_allele is not in [Ins,Del,SNP], "
+                f"but {allel_type} at position {genome_pos} for {in_path}."
             )
         ref_allele: str = vcf.at[i, "Ref"].strip()
         if not bool(re.fullmatch(r"^[ACGT]$", ref_allele)):
