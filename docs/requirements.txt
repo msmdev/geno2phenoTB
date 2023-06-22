@@ -1,0 +1,3 @@
+setuptools
+sphinx>=5.0
+sphinxcontrib-spelling==8.0
