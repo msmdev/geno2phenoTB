@@ -63,6 +63,7 @@ def single_prediction(
         'FQ', 'INH', 'KAN', 'PAS', 'PZA', 'RIF', 'STR'.
     output_dir : str
         Path to output directory.
+        A resistance report file '<drug>_resistance_report.txt' is written to this directory.
     sample_id : str
         Sample ID.
     features : pd.Series
@@ -354,10 +355,13 @@ def predict(
         Path to directory containing the fastq files.
     output_dir : str
         Path to output directory.
+        A file named '<sample_id>_feature_importance_evaluation.tsv' is written to this directory.
+        This file contains a table with feature importance values and catalog info per drug.
+        Further, for each drug a resistance report file '<drug>_resistance_report.txt' is output.
     sample_id : str
         Sample ID.
     skip_mtbseq : bool, default=False
-        Do not run MTBSeq  but use preprocessed data.
+        Do not run MTBSeq but use preprocessed data.
     drugs : Union[str, list], default=None
         If None, drug resistance predictions for all drugs known to geno2phenoTB are determined.
         If a list of drugs is supplied, predictions will be only determined for these.
