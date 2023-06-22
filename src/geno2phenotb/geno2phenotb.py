@@ -21,8 +21,10 @@ _logger = logging.getLogger(__name__)
 def setup_logging(loglevel):
     """Setup basic logging.
 
-    Args:
-      loglevel (int): minimum loglevel for emitting messages
+    Parameters
+    ----------
+    loglevel : int
+        Minimum loglevel for emitting messages.
     """
     logformat = "[%(asctime)s] %(levelname)s:%(name)s:%(message)s"
     logging.basicConfig(
@@ -36,8 +38,10 @@ def main(args):
     Instead of returning the value from :func:`process`, it prints the result to the
     ``stdout`` in a nicely formatted message.
 
-    Args:
-      args (List[str]): command line parameters as list of strings
+    Parameters
+    ----------
+    args : List[str]
+        Command line parameters as list of strings.
     """
     args = parse_args(args)
     setup_logging(args.loglevel)

@@ -183,7 +183,7 @@ def preprocess(
         Path to output directory.
         Two files are written to this directory.
         A file named '<sample_id>_resistant_genotype_variants.tsv' with resistance-related variants
-        per drug and a file named '<sample_id<_extracted_features.tsv' with per-drug genotypes.
+        per drug and a file named '<sample_id>_extracted_features.tsv' with per-drug genotypes.
     sample_id : str
         Sample ID.
     skip_mtbseq : bool, default=False

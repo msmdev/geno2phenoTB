@@ -24,11 +24,13 @@ def check_fastq_filenames(fastq_dir: str, sample_id: str) -> List[str]:
 
     Parameters
     ----------
-        fastq_dir: str, path to directory containing the fastq files.
+    fastq_dir : str
+        Path to the directory containing the fastq files.
 
     Returns
-    ----------
-        None, Error if names do not follow scheme.
+    -------
+    None
+        Throws an error if the names do not follow the assumed scheme.
     """
     _logger.info("Checking naming scheme of fastq files")
 
@@ -312,16 +314,22 @@ def check_output(
     against the ground truth.
 
     Throws an assertion error if the files do not match up.
+
     Parameters
     ----------
-        output_dir : str, output directory of prediction.
-        ground_truth_dir: str, directory of ground truth files.
-        sample_id : str, id of sample.
-        preprocess: bool, check only the preprocess output.
+    output_dir : str
+        Output directory of prediction.
+    ground_truth_dir : str
+        Directory of ground truth files.
+    sample_id : str
+        ID of sample.
+    preprocess : bool
+        If True, check only the preprocess output.
 
     Returns
     -------
-        True, Exception if files do not match.
+    bool, default=True
+        Throws an exception if the files do not match.
     """
 
     # Check the extracted features.

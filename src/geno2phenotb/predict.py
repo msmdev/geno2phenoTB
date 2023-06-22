@@ -20,7 +20,10 @@ __license__ = "LGPL-3.0-only"
 _logger = logging.getLogger(__name__)
 
 
-def adjusted_classes(proba: float, t: float) -> float:
+def adjusted_classes(
+    proba: float,
+    t: float,
+) -> float:
     """
     This function adjusts class predictions based on the prediction threshold (t).
 

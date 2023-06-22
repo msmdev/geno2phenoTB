@@ -14,12 +14,15 @@ __license__ = "LGPL-3.0-only"
 def parse_args(args):
     """Parse command line parameters.
 
-    Args:
-      args (List[str]): command line parameters as list of strings
-          (for example  ``["--help"]``).
+    Parameters
+    ----------
+    args : List[str]
+        Command line parameters as list of strings (for example  ``["--help"]``).
 
-    Returns:
-      :obj:`argparse.Namespace`: command line parameters namespace
+    Returns
+    -------
+    :obj:`argparse.Namespace`
+        Command line parameters namespace.
     """
     main_parser = argparse.ArgumentParser(
         description="geno2phenoTB is a tool to predict resistance of Mycobacterium tuberculosis against antibiotics using WGS data."  # noqa: E501

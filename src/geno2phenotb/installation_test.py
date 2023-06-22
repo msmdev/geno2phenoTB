@@ -10,11 +10,10 @@ import requests
 from tqdm.auto import tqdm
 
 from geno2phenotb.predict import predict
-from geno2phenotb.preprocess import preprocess
 from geno2phenotb.utils import check_output, get_static_dir
 
-__author__ = "Jules Kreuer"
-__copyright__ = "Jules Kreuer"
+__author__ = "Jules Kreuer, Bernhard Reuter"
+__copyright__ = "Bernhard Reuter, Jules Kreuer"
 __license__ = "LGPL-3.0-only"
 
 _logger = logging.getLogger(__name__)
@@ -26,12 +25,15 @@ def check_sha256(file_path: str, expected_hash: str) -> bool:
 
     Parameters
     ----------
-        file_path: str, path to file.
-        expected_hash: str, expected sha256 hash of file.
+    file_path : str
+        The path to the file.
+    expected_hash : str
+        Expected sha256 hash of the file.
 
     Returns
     ----------
-        matching: bool, True if file matches the hash.
+    matching : bool
+        True, if file matches the hash.
     """
     _logger.debug(f"Checking sha2567 hash of {file_path}.")
     file_hash = sha256()
@@ -46,17 +48,21 @@ def check_sha256(file_path: str, expected_hash: str) -> bool:
 
 def download_file(url: str, file_name: str, expected_hash: str) -> None:
     """
-    Downloads a file and save it if it does not exists.
+    Downloads a file and save it, if it does not exists.
 
     Displays a progress bar and throws an exception if the sha256 hash does not match.
+
     Parameters
     ----------
-        file_name: str, name of model file.
-        expected_hash: str, sha256 hash of model.
+    file_name : str
+        The name of model file.
+    expected_hash : str
+        The sha256 hash of model.
 
     Returns
-    ----------
-        True, Error if sha256 hash of model is not equal to hash.
+    -------
+    None
+        Throws an exception if the sha256 hash of the model is not equal to the hash.
     """
     _logger.info(f"Downloading: {file_name}")
 
@@ -89,7 +95,8 @@ def download_file(url: str, file_name: str, expected_hash: str) -> None:
     if not check_sha256(file_path, expected_hash):
         raise AssertionError(
             f"File {file_name} was not downloaded properly."
-            "Check your network connection and retry the same command to download the files and restart the test."
+            "Check your network connection and retry the same command to download the files and "
+            "restart the test."
         )
 
     return
@@ -97,6 +104,7 @@ def download_file(url: str, file_name: str, expected_hash: str) -> None:
 
 def download_test_files() -> None:
     """Download the forward / reverse reads with accession id ERR551304 from the ENA."""
+
     url_forward_reads = "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR551/ERR551304/ERR551304_1.fastq.gz"
     url_reverse_reads = "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR551/ERR551304/ERR551304_2.fastq.gz"
 
@@ -111,6 +119,8 @@ def download_test_files() -> None:
     print("Downloading / Checking file 2 / 2")
     download_file(url_reverse_reads, fn_reverse, sha256_reverse)
 
+    return
+
 
 def self_test(sample_id: str, complete: bool) -> None:
     """
@@ -118,12 +128,15 @@ def self_test(sample_id: str, complete: bool) -> None:
 
     Parameters
     ----------
-        sample_id: str, sample id. One of ERR551304, ERR551304, ERR553187.
-        complete: bool, run the complete test Only available for ERR551304.
+    sample_id : str
+        The sample ID. One of ERR551304, ERR551304, ERR553187.
+    complete : bool
+        Run the complete test. Only available for ERR551304.
 
     Returns
     ----------
-        None, exception if output differs to ground truth.
+    None
+        Throws an exception if the output differs from the ground truth.
     """
     with TemporaryDirectory(prefix="geno2phenotb_selftest_") as output_dir:
         _logger.info("Starting installation test.")
@@ -166,3 +179,5 @@ def self_test(sample_id: str, complete: bool) -> None:
             )
 
         check_output(output_dir, ground_truth_dir, sample_id, only_preprocess=False)
+
+    return
