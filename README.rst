@@ -213,7 +213,8 @@ and use, e.g., the :mod:`geno2phenotb.predict.predict` function of the
     Returns:
 
     result : pd.DataFrame
-        A DataFrame with the probabilities (for resistance) and predictions (1.0 for resistance, 0.0 for susceptibility) for the requested drugs.
+        A DataFrame with the probabilities (for resistance) and predictions (1.0 for resistance,
+        0.0 for susceptibility) for the requested drugs.
     feature_evaluation : pd.DataFrame
         A DataFrame listing the features (called variants, lineage classification, genotypes) plus
         an assessment of the relevance of each feature for the Machine-Learning-based and catalog

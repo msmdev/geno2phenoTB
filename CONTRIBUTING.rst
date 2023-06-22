@@ -131,7 +131,7 @@ Code Contributions
 
 #. Create a branch to hold your changes::
 
-    git checkout -b name-for-my-feature
+    git checkout -b my-feature-name
 
    and start making changes. **Never work on the main branch!**
 
@@ -185,7 +185,7 @@ Submit your contribution
 
 #. If everything works fine, push your local branch to |the repository service| with::
 
-    git push -u origin name-for-my-feature
+    git push -u origin my-feature-name
 
 #. Go to the web page of your fork and click |contribute button|
    to submit your changes for review.
