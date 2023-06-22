@@ -1,6 +1,6 @@
-================
-Usage of the CLI
-================
+======================
+Command Line Interface
+======================
 
 The command-line interface (CLI) offers two modes: a self-test mode and a run mode.
 

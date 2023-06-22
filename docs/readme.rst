@@ -1,3 +1,3 @@
 .. _readme:
 .. include:: ../README.rst
-    :end-line: 79
+    :end-line: 229

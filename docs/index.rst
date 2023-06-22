@@ -1,5 +1,5 @@
 .. include:: ../README.rst
-    :end-line: 79
+    :end-line: 41
 
 .. include:: _key_contributors.rst
 
@@ -9,8 +9,8 @@
 
    Overview <readme>
    Installation <installation>
-   CLI-Usage <cli-usage>
-   Python Module Reference <api/modules>
+   Command Line Interface <cli>
+   Python Interface <api/modules>
    Contributing & Help <contributing>
    Acknowledgments <acknowledgments>
    Authors <authors>

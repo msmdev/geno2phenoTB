@@ -16,6 +16,10 @@
     :alt: Citation count
     :target: https://juleskreuer.eu/projekte/citation-badge/
 
+.. |br| raw:: html
+
+  <br/>
+
 ============
 geno2phenoTB
 ============
@@ -74,10 +78,6 @@ and process even thousands of samples in parallel and, thus, quickly.
 .. _Grobbel21: https://pubmed.ncbi.nlm.nih.gov/33900387/
 .. _Finci22: https://doi.org/10.1016/S2666-5247(22)00116-1
 
-.. |br| raw:: html
-
-  <br/>
-
 Installation
 ============
 
@@ -92,14 +92,15 @@ To install geno2phenoTB from the bioconda channel a clean conda environment is r
     # Installation
     conda install -c bioconda geno2phenoTB
 
-For the installation directly from the source, please refer to the documentation.
+For the installation directly from the source, please refer to the `installation documentation`.
 
 Basic Usage
 ===========
-Two interfaces of geno2phenoTB are exposed. A CLI and a python interface.
-Both require the path to a directory containing FASTQ files belonging to a single sample as input.
-Under the hood we use MTBseq_ for the analysis of next generation sequencing data in the form of
-FASTQ files from single end (one FASTQ file) or paired end (two FASTQ files) sequencing runs
+Two interfaces of geno2phenoTB are exposed. A comand line interface (CLI) and a python interface.
+
+Both interfaces require the path to a directory containing FASTQ files belonging to a single
+bacterical sample as input. Under the hood we use MTBseq_ for the analysis of WGS data in the form
+of FASTQ files from single end (one FASTQ file) or paired end (two FASTQ files) sequencing runs
 (tested for Illumina and Ion Torrent files).
 
 The FASTQ files must follow this naming scheme:
@@ -117,21 +118,59 @@ field and indicates if reads are in forward (R1) or reverse (R2) orientation in 
 Files for single end data have to use the [Direction] R1. Other than these, file names can be
 freely given, including further [*] fields.
 
-Command-Line-Interface
+geno2phenoTB can be used to analyze WGS data (using MTBseq), preprocess this data further, and
+perform predictions of resistance against up to 12 antituberculous drugs.
+In doing so, irrespective of whether the CLI or the python interface is used, several output files
+are generated.
+
+If only preprocessing is requested, the following files are output:
+
+#. A file named '<sample_id>_resistant_genotype_variants.tsv' with resistance-related variants per
+   drug.
+#. A file named '<sample_id>_extracted_features.tsv' with per-drug genotypes.
+
+If preprocessing and prediction is requested, geno2phenoTB outputs the files listed above plus the
+following:
+
+#. A file named '<sample_id>_feature_importance_evaluation.tsv' containing a table with feature
+   importance values and resistance catalog info per drrug.
+#. A resistance report file '<drug>_resistance_report.txt' for each drug.
+
+Drug-specific machine learning models and a resistance mutation catalog for the following 12 drugs
+are implemented: AMK (amikacin), CAP (capreomycin), DCS (cycloserine), EMB (ethambutol), ETH
+(thioamides), FQ (fluoroquinolones), INH (isoniazid), KAN (kanamycin), PAS (paraaminosalicylic
+acid), PZA (pyrazinamide), RIF (rifampicin), STR (streptomycin).
+
+.. _MTBseq: https://github.com/ngs-fzb/MTBseq_source
+
+Command Line Interface
 ----------------------
-The CLI offers two modes. The run mode is used to predict the resistance:
+The CLI offers two modes. The run mode is used to preprocess the data and predict drug resistance:
 
 .. code-block:: console
 
-    geno2phenotb run [-h] -i DIR -o DIR [-p] --sample-id SampleID
+    usage: geno2phenotb run [-h] [--skip-mtbseq] [-p] -i DIR -o DIR --sample-id
+                            SampleID
+                            [-d {AMK,CAP,DCS,EMB,ETH,FQ,INH,KAN,PAS,PZA,RIF,STR}]
 
-      -h,     show the help message
-      -i DIR, Path to the directory were the FASTQ files are located.
-      -o DIR  Path to the directory were the final output files shall be stored.
-      --sample-id SampleID,  SampleID (i.e. ERR/SRR run accession).
+    optional arguments:
+      -h, --help            show this help message and exit
+      --skip-mtbseq         Skip the MTBseq step. Precomputed output must be
+                            present in fastq-dir.
+      -p, --preprocess      Run only the preprocessing steps.
+      -i DIR, --fastq-dir DIR
+                            Path to the directory were the FASTQ files are
+                            located.
+      -o DIR, --output DIR  Path to the directory were the final output files
+                            shall be stored.
+      --sample-id SampleID  SampleID (i.e. ERR/SRR run accession).
+      -d DRUG, --drug DRUG  The drug for which resistance should be predicted. If
+                            you want predictions for several drugs, use the
+                            argument several times,i.e., -d AMK -d DCS -d STR. If
+                            the flag is not set, predictions for all drugs will be
+                            performed.
 
-More advanced arguments / options are available and can be found in the
-:todo link to readthedocs `CLI-documentation <cli-usage>`.
+More advanced applications of the CLI are available and can be found in the `CLI documentation`.
 
 Example
 *******
@@ -144,8 +183,14 @@ To predict the resistance of the sample (`ERR551304`) against all drugs use:
 
 Python Interface
 ----------------
-Import geno2phenotb and use the :mod:`geno2phenotb.predict.predict` function of the
-:mod:`geno2phenotb.predict` submodule:
+Import geno2phenotb
+
+.. code-block:: text
+
+    import geno2phenotb
+
+and use, e.g., the :mod:`geno2phenotb.predict.predict` function of the
+:mod:`geno2phenotb.predict` submodule to preprocess the data and predict drug resistance:
 
 .. code-block:: console
 
@@ -182,8 +227,7 @@ Import geno2phenotb and use the :mod:`geno2phenotb.predict.predict` function of 
         be constructed by connecting the given features with boolean 'or' operators
         (disjunctions)). Otherwise, rules[drug]=None.
 
-For the complete description refer to the
-:todo link to readthedocs `Python Module Reference <api/modules>`.
+For a complete description and more functionalities refer to the `python interface documentation`.
 
 Acknowledgments
 ===============
@@ -202,7 +246,6 @@ network for their efforts to initiate the CARE project.
 Finally, we would like to thank all the talented people that were involved in the CARE project
 for their great effort and hard work.
 
-.. _MTBseq: https://github.com/ngs-fzb/MTBseq_source
 .. _CARE: https://www.careresearch.eu/
 .. _Tübingen AI Center: https://tuebingen.ai/
 .. _Nico Pfeifer: https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/methods-in-medical-informatics/team/nico-pfeifer/
