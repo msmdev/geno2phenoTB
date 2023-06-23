@@ -8,8 +8,8 @@
 # serve to show the default.
 
 import os
-import sys
 import shutil
+import sys
 
 # -- Path setup --------------------------------------------------------------
 
@@ -77,10 +77,10 @@ extensions = [
 ]
 # Linkcheck config
 # TODO remove when published
-linkcheck_ignore = [
-    r"https://github.com/msmdev/geno2phenoTB.*",
-    r"https://geno2phenoTB.readthedocs.io/en/stable/",
-]
+# linkcheck_ignore = [
+#     r"https://github.com/msmdev/geno2phenoTB.*",
+#     r"https://geno2phenoTB.readthedocs.io/en/stable/",
+# ]
 
 linkcheck_exclude_patterns=["references.rst"]
 
