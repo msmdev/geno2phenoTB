@@ -16,10 +16,6 @@
     :alt: Citation count
     :target: https://juleskreuer.eu/projekte/citation-badge/
 
-.. |br| raw:: html
-
-  <br/>
-
 ============
 geno2phenoTB
 ============
@@ -27,12 +23,13 @@ geno2phenoTB
     geno2phenoTB is a machine learning based tool to predict resistance of *Mycobacterium
     tuberculosis* against antibiotics using whole-genome sequencing data.
 
-Approximately 182.000 (range 113.000-250.000) patients die each year from tuberculosis (TB) caused
-by a multidrug-resistant (MDR) or rifampicin-resistant (RR) strain of the *Mycobacterium
+Approximately 182.000 (range 113.000-250.000) patients die each year from tuberculosis (TB)
+caused by a multidrug-resistant (MDR) or rifampicin-resistant (RR) strain of the *Mycobacterium
 tuberculosis* complex (MTBC). The design of a MDR/RR-TB regimen requires detailed knowledge about
 resistance against second-line anti-tuberculosis drugs. Performing phenotypic drug susceptibility
 tests (DST) for multiple anti-tuberculosis drugs is time-consuming, laborious, and for some drugs
-impossible. |br|
+impossible.
+
 Next generation sequencing (NGS) techniques are on the verge to replace phenotypic methods by
 predicting drug susceptibility and resistance based on mutation catalogs. NGS can be performed on
 direct patient specimen and results are available within days. Advances in machine learning (ML)
@@ -40,23 +37,27 @@ techniques allow unbiased predictions from genotype to phenotype within minutes.
 of-the-art expertise in ML and genome-based resistance diagnostics to develop an engine that
 predicts drug resistance profiles from whole genome sequencing (WGS) data.
 
-We used genomic data, augmented with genotypic data (generated using a state-of-the-art resistance
-mutation catalog (see [Grobbel21_] and [Finci22_]) of the Research Center Borstel (FZB)), from a
-database we curated of more than 18000 WGS samples with phenotypic DST labels to train ML models
-capable of predicting drug resistance from WGS data. |br|
+We used genomic data, augmented with genotypic data (generated using a state-of-the-art
+resistance mutation catalog (see [Grobbel21_] and [Finci22_]) of the Research Center Borstel
+(FZB)), from a database we curated of more than 18000 WGS samples with phenotypic DST labels to
+train ML modelscapable of predicting drug resistance from WGS data.
+
 To find the best performing drug-specific models, different supervised learning methods such as
 rule-based classifiers (RBC) utilizing Boolean compressed sensing, gradient-boosted trees (GBT),
-logistic regression (LR), and random forests (RF) were compared. |br|
+logistic regression (LR), and random forests (RF) were compared.
+
 In greater detail, we employed a 10-fold repeated nested stratified 5-fold cross-validation (CV)
 protocol to train the models and to assess their performance. This included tuning of the model
 hyper-parameters on the inner CV folds. In case of GBT, LR, and RF models, they were tuned for
 maximum average precision (AP_) on the inner CV folds, while the classifiers decision threshold
 was tuned for optimal F1 score on the training partition of the outer CV fold. In case of RBC
 models, they were tuned for maximum Matthews correlation coefficient (MCC), while no decision
-threshold tuning was applied, since RBC deliver simple OR-rules. |br|
+threshold tuning was applied, since RBC deliver simple OR-rules.
+
 To make the models more understandable and increase confidence in the resulting predictions,
 either inherently interpretable models like RBC were used or model-intrinsic feature importance
-values are output. |br|
+values are output.
+
 Results for 5 first-generation drugs (ethambutol, isoniazid, pyrazinamide, rifampicin,
 streptomycin) and 7 second-generation drugs (amikacin, capreomycin, cycloserine, fluoroquinolones,
 kanamycin, paraaminosalicylic acid, thioamides) show that the trained prediction models exhibit
@@ -67,7 +68,8 @@ Finally, the best ML model for each of the 12 drugs was selected and implemented
 resistance prediction engine. This constitutes the core of the geno2phenoTB package complemented
 by state-of-the-art continuous integration and automatic deployment.
 The geno2phenoTB package is mainly written in Python, hosted on GitHub, and can be easily and
-directly installed via the common package manager conda. |br|
+directly installed via the common package manager conda.
+
 Further, geno2phenoTB integrates a complete NGS data processing pipeline, namely MTBSeq, starting
 from raw reads given via FASTQ files. Since the processing step is computationally intensive,
 a tool that can be installed locally (e.g., on a workstation or supercomputer), like geno2phenoTB,
@@ -108,7 +110,7 @@ installing geno2phenoTB via pip:
     # Installation
     pip install geno2phenoTB
 
-For the installation directly from the source, please refer to the `installation documentation`.
+For the installation directly from the source, please refer to the `installation documentation`_.
 
 .. _tests/g2p-test.yaml: https://github.com/msmdev/geno2phenoTB/blob/main/tests/g2p-test.yaml
 
@@ -188,7 +190,7 @@ The CLI offers two modes. The run mode is used to preprocess the data and predic
                             the flag is not set, predictions for all drugs will be
                             performed.
 
-More advanced applications of the CLI are available and can be found in the `CLI documentation`.
+More advanced applications of the CLI are available and can be found in the `CLI documentation`_.
 
 Example
 *******
@@ -246,7 +248,11 @@ and use, e.g., the :mod:`geno2phenotb.predict.predict` function of the
         be constructed by connecting the given features with boolean 'or' operators
         (disjunctions)). Otherwise, rules[drug]=None.
 
-For a complete description and more functionalities refer to the `python interface documentation`.
+For a complete description and more functionalities refer to the `python interface documentation`_.
+
+.. _installation documentation: https://geno2phenotb.readthedocs.io/en/latest/installation.html
+.. _CLI documentation: https://geno2phenotb.readthedocs.io/en/latest/cli.html
+.. _python interface documentation: https://geno2phenotb.readthedocs.io/en/latest/api/modules.html
 
 Acknowledgments
 ===============
