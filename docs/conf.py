@@ -79,7 +79,7 @@ extensions = [
 # TODO remove when published
 # linkcheck_ignore = [
 #     r"https://github.com/msmdev/geno2phenoTB.*",
-#     r"https://geno2phenoTB.readthedocs.io/en/stable/",
+#     r"https://geno2phenoTB.readthedocs.io/en/latest/",
 # ]
 
 linkcheck_exclude_patterns=["references.rst"]

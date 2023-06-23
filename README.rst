@@ -10,7 +10,7 @@
 
 .. image:: https://readthedocs.org/projects/geno2phenoTB/badge/?version=latest
     :alt: ReadTheDocs
-    :target: https://geno2phenoTB.readthedocs.io/en/stable/
+    :target: https://geno2phenoTB.readthedocs.io/en/latest/
 
 .. image:: https://api.juleskreuer.eu/citation-badge.php?doi=DOI
     :alt: Citation count
