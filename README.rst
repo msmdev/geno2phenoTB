@@ -40,7 +40,7 @@ predicts drug resistance profiles from whole genome sequencing (WGS) data.
 We used genomic data, augmented with genotypic data (generated using a state-of-the-art
 resistance mutation catalog (see [Grobbel21_] and [Finci22_]) of the Research Center Borstel
 (FZB)), from a database we curated of more than 18000 WGS samples with phenotypic DST labels to
-train ML modelscapable of predicting drug resistance from WGS data.
+train ML models capable of predicting drug resistance from WGS data.
 
 To find the best performing drug-specific models, different supervised learning methods such as
 rule-based classifiers (RBC) utilizing Boolean compressed sensing, gradient-boosted trees (GBT),
@@ -209,8 +209,8 @@ Import geno2phenotb
 
     import geno2phenotb
 
-and use, e.g., the :mod:`geno2phenotb.predict.predict` function of the
-:mod:`geno2phenotb.predict` submodule to preprocess the data and predict drug resistance:
+and use, e.g., the `geno2phenotb.predict.predict()`_ function of the
+`geno2phenotb.predict`_ submodule to preprocess the data and predict drug resistance:
 
 .. code-block:: console
 
@@ -253,6 +253,8 @@ For a complete description and more functionalities refer to the `python interfa
 .. _installation documentation: https://geno2phenotb.readthedocs.io/en/latest/installation.html
 .. _CLI documentation: https://geno2phenotb.readthedocs.io/en/latest/cli.html
 .. _python interface documentation: https://geno2phenotb.readthedocs.io/en/latest/api/modules.html
+.. _geno2phenotb.predict.predict(): https://geno2phenotb.readthedocs.io/en/latest/api/geno2phenotb.html#geno2phenotb.predict.predict
+.. _geno2phenotb.predict: https://geno2phenotb.readthedocs.io/en/latest/api/geno2phenotb.html#module-geno2phenotb.predict
 
 Acknowledgments
 ===============
