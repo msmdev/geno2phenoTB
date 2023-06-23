@@ -114,10 +114,10 @@ For the installation directly from the source, please refer to the `installation
 
 Basic Usage
 ===========
-Two interfaces of geno2phenoTB are exposed. A comand line interface (CLI) and a python interface.
+Two interfaces of geno2phenoTB are exposed. A command line interface (CLI) and a python interface.
 
 Both interfaces require the path to a directory containing FASTQ files belonging to a single
-bacterical sample as input. Under the hood we use MTBseq_ for the analysis of WGS data in the form
+bacterial sample as input. Under the hood we use MTBseq_ for the analysis of WGS data in the form
 of FASTQ files from single end (one FASTQ file) or paired end (two FASTQ files) sequencing runs
 (tested for Illumina and Ion Torrent files).
 
@@ -151,7 +151,7 @@ If preprocessing and prediction is requested, geno2phenoTB outputs the files lis
 following:
 
 #. A file named '<sample_id>_feature_importance_evaluation.tsv' containing a table with feature
-   importance values and resistance catalog info per drrug.
+   importance values and resistance catalog info per drug.
 #. A resistance report file '<drug>_resistance_report.txt' for each drug.
 
 Drug-specific machine learning models and a resistance mutation catalog for the following 12 drugs
