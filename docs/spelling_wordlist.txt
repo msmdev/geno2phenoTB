@@ -1,6 +1,7 @@
 accessors
 ald
 amikacin
+antituberculous
 bioconda
 boolean
 Borstel
@@ -19,6 +20,7 @@ ethambutol
 fastq
 fluoroquinolones
 geno
+geno2pheno
 geno2phenoTB
 genomic
 genotype
@@ -26,6 +28,7 @@ genotypes
 genotypic
 gid
 gidB
+Illumina
 importances
 init
 interpretable
@@ -39,8 +42,11 @@ mtbseq
 multidrug
 mycobacterium
 namespace
+Nico
 paraaminosalicylic
 param
+Pfeifer
+pheno
 phenoTB
 phenotypic
 pncA
@@ -65,4 +71,7 @@ Subst
 thioamides
 tlyA
 todo
+tsv
+Tübingen
+txt
 vcf

@@ -10,7 +10,7 @@ The command-line interface (CLI) offers two modes: a self-test mode and a run mo
 Run Mode
 --------
 
-This mode is used to predict atibiotic resistance of Mycobacterium tuberculosis.
+This mode is used to predict antibiotic resistance of Mycobacterium tuberculosis.
 The primary run command has several options:
 
 .. code-block:: console
