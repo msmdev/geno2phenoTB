@@ -18,6 +18,22 @@ To install geno2phenoTB from bioconda a clean conda environment is required:
     # Installation
     conda install -c bioconda geno2phenoTB
 
+While we recommend to install geno2phenoTB from bioconda, it can be installed using pip as well.
+If you prefer to install using pip, you need to make sure that all requirements are fulfilled.
+The simplest and recommended way in doing so is to create a conda environment containing all
+dependencies (using the conda environment file located in `tests/g2p-test.yaml`_) before
+installing geno2phenoTB via pip:
+
+.. code-block:: console
+
+    # Required environment with all dependencies
+    conda env create -f tests/g2p-test.yaml
+    conda rename -n g2p-test g2p-tb
+    conda activate g2p-tb
+
+    # Installation
+    pip install geno2phenoTB
+
 Sources
 -------
 To install geno2phenoTB from the sources you need to:
@@ -39,3 +55,5 @@ To install geno2phenoTB from the sources you need to:
 
     # Install module using pip
     pip install .
+
+.. _tests/g2p-test.yaml: https://github.com/msmdev/geno2phenoTB/blob/main/tests/g2p-test.yaml
