@@ -5,8 +5,8 @@ Installation
 There are two ways of installing geno2phenoTB.
 Directly from the bioconda channel or from the sources.
 
-Bioconda
---------
+Bioconda / pip
+--------------
 To install geno2phenoTB from bioconda a clean conda environment is required:
 
 .. code-block:: console

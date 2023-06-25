@@ -1,18 +1,22 @@
+|Conda| |CI| |Docs| |License|
 
-
-.. image:: https://img.shields.io/conda/vn/conda-forge/geno2phenoTB.svg
+.. |Conda| image:: https://img.shields.io/conda/vn/conda-forge/geno2phenoTB.svg
     :alt: Conda-Forge
     :target: https://anaconda.org/conda-forge/geno2phenoTB
 
-.. image:: https://github.com/msmdev/geno2phenoTB/actions/workflows/ci.yml/badge.svg
+.. |CI| image:: https://github.com/msmdev/geno2phenoTB/actions/workflows/ci.yml/badge.svg
     :alt: Test status
     :target: https://github.com/msmdev/geno2phenoTB/actions/workflows/ci.yml
 
-.. image:: https://readthedocs.org/projects/geno2phenotb/badge/?version=latest
+.. |Docs| image:: https://readthedocs.org/projects/geno2phenotb/badge/?version=latest
     :alt: ReadTheDocs
     :target: https://geno2phenotb.readthedocs.io/en/latest/
 
-.. image:: https://api.juleskreuer.eu/citation-badge.php?doi=DOI
+.. |License| image:: https://img.shields.io/github/license/msmdev/geno2phenoTB?color=green
+    :target: https://github.com/msmdev/geno2phenoTB/blob/main/LICENSE.txt
+    :alt: License
+
+.. |Cite| image:: https://api.juleskreuer.eu/citation-badge.php?doi=DOI
     :alt: Citation count
     :target: https://juleskreuer.eu/projekte/citation-badge/
 
