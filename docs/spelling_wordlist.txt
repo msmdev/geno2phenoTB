@@ -1,6 +1,7 @@
 accessors
 ald
 amikacin
+aminosalicylic
 antituberculous
 bioconda
 boolean
@@ -43,7 +44,6 @@ multidrug
 mycobacterium
 namespace
 Nico
-paraaminosalicylic
 param
 Pfeifer
 pheno

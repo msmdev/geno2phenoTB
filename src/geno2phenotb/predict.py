@@ -28,6 +28,7 @@ def adjusted_classes(
     This function adjusts class predictions based on the prediction threshold (t).
 
     Will only work for binary classification problems.
+
     Parameters
     ----------
     proba : float

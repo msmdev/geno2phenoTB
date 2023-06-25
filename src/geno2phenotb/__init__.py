@@ -11,3 +11,7 @@ except PackageNotFoundError:  # pragma: no cover
     __version__ = "unknown"
 finally:
     del version, PackageNotFoundError
+
+__author__ = "Bernhard Reuter, Jules Kreuer"
+__maintainer__ = "Bernhard Reuter"
+__email__ = "bernhard-reuter@gmx.de"

@@ -8,9 +8,9 @@
     :alt: Test status
     :target: https://github.com/msmdev/geno2phenoTB/actions/workflows/ci.yml
 
-.. image:: https://readthedocs.org/projects/geno2phenoTB/badge/?version=latest
+.. image:: https://readthedocs.org/projects/geno2phenotb/badge/?version=latest
     :alt: ReadTheDocs
-    :target: https://geno2phenoTB.readthedocs.io/en/latest/
+    :target: https://geno2phenotb.readthedocs.io/en/latest/
 
 .. image:: https://api.juleskreuer.eu/citation-badge.php?doi=DOI
     :alt: Citation count
@@ -60,7 +60,7 @@ values are output.
 
 Results for 5 first-generation drugs (ethambutol, isoniazid, pyrazinamide, rifampicin,
 streptomycin) and 7 second-generation drugs (amikacin, capreomycin, cycloserine, fluoroquinolones,
-kanamycin, paraaminosalicylic acid, thioamides) show that the trained prediction models exhibit
+kanamycin, para-aminosalicylic acid, thioamides) show that the trained prediction models exhibit
 comparable or better resistance prediction performance than a current resistance mutation catalog
 of the FZB.
 
@@ -110,7 +110,7 @@ installing geno2phenoTB via pip:
     # Installation
     pip install geno2phenoTB
 
-For the installation directly from the source, please refer to the `installation documentation`_.
+For installation directly from the source, please refer to the `installation documentation`_.
 
 .. _tests/g2p-test.yaml: https://github.com/msmdev/geno2phenoTB/blob/main/tests/g2p-test.yaml
 
@@ -158,7 +158,7 @@ following:
 
 Drug-specific machine learning models and a resistance mutation catalog for the following 12 drugs
 are implemented: AMK (amikacin), CAP (capreomycin), DCS (cycloserine), EMB (ethambutol), ETH
-(thioamides), FQ (fluoroquinolones), INH (isoniazid), KAN (kanamycin), PAS (paraaminosalicylic
+(thioamides), FQ (fluoroquinolones), INH (isoniazid), KAN (kanamycin), PAS (para-aminosalicylic
 acid), PZA (pyrazinamide), RIF (rifampicin), STR (streptomycin).
 
 .. _MTBseq: https://github.com/ngs-fzb/MTBseq_source

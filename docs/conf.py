@@ -10,7 +10,13 @@
 import os
 import shutil
 import sys
+from datetime import datetime
 
+from sphinx.application import Sphinx
+
+import geno2phenotb
+
+needs_sphinx = "5"
 # -- Path setup --------------------------------------------------------------
 
 __location__ = os.path.dirname(__file__)
@@ -74,9 +80,27 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.builders.linkcheck",  # Checking of external links
     "sphinxcontrib.spelling",  # Spellcheck
+    "sphinx_autodoc_typehints",
+    "sphinx_copybutton",
 ]
+
+autosummary_generate = True
+autodoc_member_order = "alphabetical"
+autodoc_typehints = "signature"
+autodoc_docstring_signature = True
+autodoc_default_flags = ["inherited-members", "members"]
+napoleon_google_docstring = False
+napoleon_numpy_docstring = True
+napoleon_include_init_with_doc = False
+napoleon_use_rtype = True
+napoleon_use_param = True
+napoleon_custom_sections = [("Params", "Parameters"), ("Credits", "References")]
+napoleon_use_admonition_for_examples = False
+napoleon_use_admonition_for_notes = False
+napoleon_use_admonition_for_references = False
+todo_include_todos = False
+
 # Linkcheck config
-# TODO remove when published
 # linkcheck_ignore = [
 #     r"https://github.com/msmdev/geno2phenoTB.*",
 #     r"https://geno2phenoTB.readthedocs.io/en/latest/",
@@ -92,6 +116,15 @@ spelling_lang = "en_US"
 # Wordlist
 spelling_word_list_filename = ["spelling_wordlist.txt"]
 
+# Suggestions for misspelled words
+spelling_warning = True
+
+# Whether words that look like package names from PyPI are treated as spelled properly
+spelling_add_pypi_package_names = True
+
+# Whether a misspelling is emitted as a sphinx warning or as an info message
+spelling_show_suggestions = True
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
@@ -106,7 +139,8 @@ master_doc = "index"
 
 # General information about the project.
 project = "geno2phenoTB"
-copyright = "2023, Bernhard Reuter & Jules Kreuer"
+author = geno2phenotb.__author__
+copyright = f"{datetime.now():%Y}, {author}"  # noqa: A001
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -144,7 +178,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", ".venv"]
 # default_role = None
 
 # If true, '()' will be appended to :func: etc. cross-reference text.
-# add_function_parentheses = True
+add_function_parentheses = True
 
 # If true, the current module name will be prepended to all description
 # unit titles (such as .. function::).
@@ -171,12 +205,12 @@ todo_emit_warnings = True
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = "alabaster"
+html_theme = "sphinx_rtd_theme"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-html_theme_options = {"sidebar_width": "300px", "page_width": "1200px"}
+html_theme_options = {"navigation_depth": 4, "logo_only": True}
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = []
@@ -208,7 +242,8 @@ html_static_path = ["_static"]
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
-# html_use_smartypants = True
+html_use_smartypants = True
+pygments_style = "sphinx"
 
 # Custom sidebar templates, maps document names to template names.
 # html_sidebars = {}
@@ -230,7 +265,7 @@ html_static_path = ["_static"]
 # html_show_sourcelink = True
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
-# html_show_sphinx = True
+html_show_sphinx = False
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
 # html_show_copyright = True
@@ -289,6 +324,9 @@ latex_documents = [
 
 # If false, no module index is generated.
 # latex_domain_indices = True
+
+def setup(app: Sphinx) -> None:
+    app.add_css_file("css/custom.css")
 
 # -- External mapping --------------------------------------------------------
 python_version = ".".join(map(str, sys.version_info[0:2]))
