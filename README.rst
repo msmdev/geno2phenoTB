@@ -1,8 +1,8 @@
 |Conda| |CI| |Docs| |License|
 
-.. |Conda| image:: https://img.shields.io/conda/vn/conda-forge/geno2phenoTB.svg
+.. |Conda| image:: https://img.shields.io/conda/vn/bioconda/geno2phenoTB.svg
     :alt: Conda-Forge
-    :target: https://anaconda.org/conda-forge/geno2phenoTB
+    :target: https://anaconda.org/bioconda/geno2phenoTB
 
 .. |CI| image:: https://github.com/msmdev/geno2phenoTB/actions/workflows/ci.yml/badge.svg
     :alt: Test status
