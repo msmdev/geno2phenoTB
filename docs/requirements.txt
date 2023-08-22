@@ -8,4 +8,4 @@ sphinx-copybutton
 sphinx_last_updated_by_git
 sphinx_rtd_theme
 sphinxcontrib-spelling==8.0
-tqdm==4
+tqdm==4.*
