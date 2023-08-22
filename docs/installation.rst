@@ -19,7 +19,7 @@ required:
     # Installation
     conda install -c bioconda geno2phenoTB
 
-*Caution*: geno2phenoTB 1.0.0 is broken on bioconda - so *don't use it*.
+**Caution**: geno2phenoTB 1.0.0 is broken on bioconda - so **don't use it**.
 
 While we recommend to install geno2phenoTB from bioconda, it can be installed using pip as well.
 If you prefer to install using pip, you need to make sure that all requirements are fulfilled.
