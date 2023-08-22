@@ -13,6 +13,7 @@ Version 1.0
 
 - Bump python version to 3.8.15 since 3.7 is not officially supported any longer und thus causes
   problems with bioconda.
+- Relax (sub)version pinning of several dependencies to enable building on bioconda.
 - Fix failing publish action in CI.
 - Fix a known security vulnerability (CVE-2022-21797) by updating joblib to 1.2.
 
